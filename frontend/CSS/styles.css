@@ -1,0 +1,71 @@
+:root { --ancho-menu: 280px; }
+body  { margin: 0; font-family: system-ui, sans-serif; }
+
+#btn_menu {
+    position: fixed; top: 12px; left: 12px;
+    z-index: 20; font-size: 1.3rem; cursor: pointer;
+}
+
+#menu {
+    position: fixed; top: 0; left: 0;
+    width: var(--ancho-menu); height: 100vh;
+    box-sizing: border-box;
+    padding-top: 60px;
+    background: #1f2937;
+    overflow-y: auto;
+    transition: transform .3s ease;
+    z-index: 10;
+}
+
+#principal { margin-left: var(--ancho-menu); transition: margin-left .3s ease; }
+#principal header { padding: 16px 30px 16px 70px; }  /* 70px: deja libre el botón ☰ */
+#contenido { padding: 20px 30px 30px; }
+
+/* Menú */
+#menu ul { list-style: none; margin: 0; padding: 0; }
+#menu summary { padding: 12px 20px; color: #fff; font-weight: 600; cursor: pointer; }
+#menu summary:hover { background: #374151; }
+#menu details details > summary { padding-left: 36px; font-weight: 400; }   /* subcategoría */
+#menu a { display: block; padding: 8px 20px 8px 40px; color: #e5e7eb; text-decoration: none; }
+#menu details details a { padding-left: 56px; }                              /* enlaces de subcategoría */
+#menu a:hover { background: #374151; }
+#menu a.activo { background: #2563eb; color: #fff; }
+
+/* Menú oculto */
+body.menu-oculto #menu { transform: translateX(-100%); }
+body.menu-oculto #principal { margin-left: 0; }
+
+@media (max-width: 768px) { #principal { margin-left: 0; } }
+
+
+/* Enlace Inicio */
+#menu a.enlace-inicio {
+    padding-left: 20px;
+    font-weight: 600;
+    color: #fff;
+    border-bottom: 1px solid #374151;
+}
+
+/* Pantalla de bienvenida */
+.bienvenida { max-width: 900px; }
+.bienvenida h2 { font-size: 2rem; margin: 0 0 8px; }
+.bienvenida-intro { font-size: 1.1rem; line-height: 1.6; color: #4b5563; }
+
+.tarjetas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin: 28px 0;
+}
+.tarjeta { padding: 20px; border: 1px solid #e5e7eb; border-radius: 12px; background: #f9fafb; }
+.tarjeta h3 { margin: 0 0 6px; font-size: 1.05rem; }
+.tarjeta p { margin: 0; }
+.tarjeta-desc { color: #4b5563; }
+.tarjeta-rango { margin-top: 10px !important; font-size: .85rem; color: #2563eb; font-weight: 600; }
+
+.bienvenida-ayuda {
+    padding: 12px 16px;
+    border-left: 4px solid #2563eb;
+    background: #eff6ff;
+    border-radius: 4px;
+}
