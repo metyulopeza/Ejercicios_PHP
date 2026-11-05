@@ -1,0 +1,17 @@
+<h3>Porcentaje de recargo por pago en cuotas</h3>
+<form action="/Ejercicios_PHP/backend/Ejercicio_22.php" method="post">
+    <h2>Digite los datos de la compra</h2>
+
+    <label for="contado">Precio de contado (P)</label>
+    <input type="number" id="contado" name="contado" placeholder="2500000" step="any" min="0" required>
+    <br>
+    <label for="cuota">Valor de cada cuota (T)</label>
+    <input type="number" id="cuota" name="cuota" placeholder="230000" step="any" min="0" required>
+    <br>
+    <label for="can_coutas">Número de cuotas</label>
+    <input type="number" id="can_coutas" name="can_coutas" placeholder="12" step="1" min="1" required>
+    <br>
+    <button type="submit">Calcular recargo</button>
+</form>
+
+<p class="resultado"></p>
